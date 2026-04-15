@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fluid Fortune | Podcasts</title>
+  <meta name="description" content="Audio dispatches from Fluid Fortune. Tech, Lies and Audiotape. The Forge. Signal over noise.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://podcast.fluidfortune.com">
+  <meta property="og:title" content="Fluid Fortune Podcasts">
+  <meta property="og:description" content="Audio dispatches from Fluid Fortune. Signal over noise.">
+  <meta property="og:image" content="https://podcast.fluidfortune.com/techliesandaudiotape.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700;900&family=Inter:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700;900&family=Inter:wght@400;500&display=swap"></noscript>
+  <style>
+    :root {
+      --black:#050a05;--deep:#0d1117;--surface:#161b22;--panel:#1c2128;
+      --border:#30363d;--border-bright:#3d4d3d;
+      --green:#00ff41;--green-dim:#00c032;--green-mute:#1a3a1a;
+      --amber:#ffb700;--amber-dim:#cc9200;
+      --blue:#58a6ff;--purple:#bc8cff;--red:#f85149;
+      --text:#e6edf3;--text-dim:#8b949e;--text-muted:#484f58;
+      --font-mono:'Share Tech Mono',monospace;
+      --font-ui:'Inter',sans-serif;
+      --font-disp:'Orbitron',monospace;
+      --max-w:900px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--deep);color:var(--text);font-family:var(--font-ui);line-height:1.7;min-height:100vh}
+
+    /* Scanlines */
+    body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(to bottom,transparent,transparent 2px,rgba(0,0,0,0.12) 2px,rgba(0,0,0,0.12) 4px);pointer-events:none;z-index:9999}
+
+    /* NAV */
+    nav{background:var(--black);border-bottom:1px solid var(--border);padding:.75rem 1.5rem;display:flex;align-items:center;gap:1.5rem;position:sticky;top:0;z-index:100;backdrop-filter:blur(4px)}
+    .nav-logo{font-family:var(--font-disp);font-size:.8rem;color:var(--amber);text-decoration:none;letter-spacing:.12em}
+    .nav-logo:hover{color:#fff}
+    .nav-sub{font-family:var(--font-mono);font-size:.62rem;color:var(--text-muted);letter-spacing:.1em}
+    .nav-spacer{flex:1}
+    .nav-home{font-family:var(--font-mono);font-size:.65rem;color:var(--text-muted);text-decoration:none;letter-spacing:.08em;transition:.15s}
+    .nav-home:hover{color:var(--green-dim)}
+
+    /* HERO */
+    .hero{max-width:var(--max-w);margin:0 auto;padding:4rem 1.5rem 3rem;text-align:center}
+    .hero h1{font-family:var(--font-disp);font-size:clamp(1.2rem,4vw,1.8rem);color:#fff;font-weight:900;letter-spacing:.08em;margin-bottom:.75rem}
+    .hero p{font-size:.92rem;color:var(--text-dim);max-width:520px;margin:0 auto}
+    hr{border:none;border-top:1px solid var(--border);max-width:var(--max-w);margin:0 auto}
+
+    /* SHOWS GRID */
+    .shows{max-width:var(--max-w);margin:0 auto;padding:3rem 1.5rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+
+    /* Show card */
+    .show-card{border:1px solid var(--border);background:var(--surface);overflow:hidden;position:relative;transition:border-color .3s,box-shadow .3s;display:flex;flex-direction:column}
+    .show-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;transition:background .3s}
+    .show-card--tla::before{background:linear-gradient(90deg,var(--amber-dim),var(--amber),var(--amber-dim));background-size:200%;animation:shimmer 3s linear infinite}
+    .show-card--forge::before{background:var(--green-dim)}
+    .show-card--coming::before{background:var(--text-muted)}
+    .show-card:hover{border-color:var(--border-bright);box-shadow:0 0 24px rgba(0,0,0,0.3)}
+    .show-card--tla:hover{box-shadow:0 0 24px rgba(255,183,0,0.08)}
+    .show-card--forge:hover{box-shadow:0 0 24px rgba(0,255,65,0.06)}
+
+    .show-artwork{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;display:block;filter:saturate(1.05)}
+    .show-artwork-placeholder{width:100%;aspect-ratio:16/9;background:var(--panel);display:flex;align-items:center;justify-content:center;font-family:var(--font-disp);font-size:.8rem;color:var(--text-muted);letter-spacing:.15em}
+
+    .show-body{padding:1.25rem;flex:1;display:flex;flex-direction:column;gap:.75rem}
+    .show-badge-row{display:flex;align-items:center;gap:.5rem}
+    .show-badge{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.15em;padding:.15rem .5rem;border:1px solid}
+    .show-badge--tla{color:var(--amber-dim);border-color:var(--amber-dim)}
+    .show-badge--forge{color:var(--green-dim);border-color:var(--green-mute)}
+    .show-badge--coming{color:var(--text-muted);border-color:var(--border)}
+    .show-live{font-family:var(--font-mono);font-size:.52rem;color:var(--green-dim);display:flex;align-items:center;gap:.3rem}
+    .show-live::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 5px var(--green);animation:pulse 2s ease-in-out infinite;display:inline-block}
+
+    .show-title{font-family:var(--font-disp);font-size:clamp(.9rem,2vw,1.1rem);color:#fff;font-weight:700;letter-spacing:.06em;line-height:1.2}
+    .show-desc{font-size:.82rem;color:var(--text-dim);line-height:1.6;flex:1}
+
+    .show-latest{background:var(--panel);border:1px solid var(--border);padding:.75rem;border-radius:3px}
+    .show-latest-label{font-family:var(--font-mono);font-size:.52rem;letter-spacing:.15em;color:var(--text-muted);margin-bottom:.4rem}
+    .show-latest-title{font-size:.8rem;color:var(--text);margin-bottom:.3rem}
+    .show-latest-player audio{width:100%;height:32px;accent-color:var(--amber)}
+
+    .show-links{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.25rem}
+    .btn-show{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.1em;padding:.4rem .85rem;text-decoration:none;border:1px solid;transition:.15s;display:inline-block}
+    .btn-show--primary{color:var(--black);background:var(--amber-dim);border-color:var(--amber)}
+    .btn-show--primary:hover{background:var(--amber)}
+    .btn-show--primary--green{color:var(--black);background:var(--green-dim);border-color:var(--green)}
+    .btn-show--primary--green:hover{background:var(--green)}
+    .btn-show--sec{color:var(--text-dim);border-color:var(--border)}
+    .btn-show--sec:hover{border-color:var(--amber-dim);color:var(--amber-dim)}
+
+    /* Coming soon card */
+    .show-card--coming{opacity:.6}
+    .coming-inner{padding:3rem 1.5rem;text-align:center;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem}
+    .coming-icon{font-size:2rem;opacity:.4}
+    .coming-title{font-family:var(--font-disp);font-size:.9rem;color:var(--text-dim);letter-spacing:.1em}
+    .coming-sub{font-size:.78rem;color:var(--text-muted)}
+
+    /* Footer */
+    footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-family:var(--font-mono);font-size:.62rem;color:var(--text-muted)}
+    footer a{color:var(--amber-dim);text-decoration:none}
+
+    @keyframes shimmer{0%{background-position:0%}100%{background-position:200%}}
+    @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 5px var(--green)}50%{opacity:.6;box-shadow:0 0 10px var(--green)}}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    .show-card{animation:fadeIn .4s ease both}
+    .show-card:nth-child(2){animation-delay:.1s}
+    .show-card:nth-child(3){animation-delay:.2s}
+
+    @media(max-width:650px){.shows{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://podcast.fluidfortune.com" class="nav-logo">FLUID FORTUNE</a>
+  <span class="nav-sub">// PODCASTS</span>
+  <div class="nav-spacer"></div>
+  <a href="https://fluidfortune.com" class="nav-home">← MAIN SITE</a>
+</nav>
+
+<div class="hero">
+  <h1>[ AUDIO DISPATCHES ]</h1>
+  <p>Signal over noise. Two shows live now, more incoming. Subscribe via RSS or just hit play.</p>
+</div>
+
+<hr>
+
+<div class="shows" id="showsGrid">
+
+  <!-- TLA -->
+  <div class="show-card show-card--tla">
+    <img src="techliesandaudiotape.jpeg" alt="Tech, Lies and Audiotape" class="show-artwork">
+    <div class="show-body">
+      <div class="show-badge-row">
+        <span class="show-badge show-badge--tla">PODCAST</span>
+        <span class="show-live">LIVE</span>
+      </div>
+      <div class="show-title">Tech, Lies and Audiotape</div>
+      <p class="show-desc">The audio companion to Tech, Lies &amp; Videotape. Longer conversations, deeper dives, and more room for the take to breathe. Silicon Valley's nonsense, dissected at length.</p>
+
+      <div class="show-latest" id="tla-latest">
+        <div class="show-latest-label">LATEST EPISODE</div>
+        <div class="show-latest-title" id="tla-latest-title">Loading…</div>
+        <div class="show-latest-player">
+          <audio controls preload="none" id="tla-latest-audio" src=""></audio>
+        </div>
+      </div>
+
+      <div class="show-links">
+        <a href="tech-lies-audiotape" class="btn-show btn-show--primary">ALL EPISODES →</a>
+        <a href="tech-lies-audiotape/feed.xml" class="btn-show btn-show--sec">RSS FEED</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE FORGE -->
+  <div class="show-card show-card--forge">
+    <div class="show-artwork-placeholder">THE FORGE</div>
+    <div class="show-body">
+      <div class="show-badge-row">
+        <span class="show-badge show-badge--forge">PODCAST</span>
+        <span class="show-live">LIVE</span>
+      </div>
+      <div class="show-title">The Forge</div>
+      <p class="show-desc">The blog, spoken aloud. Each episode takes a post from Field Notes and unpacks it further — the ideas, the context, the things that didn't fit in the text. Built from the content, not a summary of it.</p>
+
+      <div class="show-latest" id="forge-latest">
+        <div class="show-latest-label">LATEST EPISODE</div>
+        <div class="show-latest-title" id="forge-latest-title">Loading…</div>
+        <div class="show-latest-player">
+          <audio controls preload="none" id="forge-latest-audio" src=""></audio>
+        </div>
+      </div>
+
+      <div class="show-links">
+        <a href="the-forge" class="btn-show btn-show--primary--green btn-show">ALL EPISODES →</a>
+        <a href="the-forge/feed.xml" class="btn-show btn-show--sec">RSS FEED</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMING SOON -->
+  <div class="show-card show-card--coming">
+    <div class="coming-inner">
+      <div class="coming-icon">🎙</div>
+      <div class="coming-title">INTERVIEWS</div>
+      <p class="coming-sub">Human conversations. Real people. Coming when it's ready.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>
+    <a href="https://podcast.fluidfortune.com">FLUID FORTUNE PODCASTS</a>
+    &nbsp;|&nbsp;
+    <a href="https://fluidfortune.com">MAIN SITE</a>
+    &nbsp;|&nbsp;
+    <a href="https://blog.fluidfortune.com">BLOG</a>
+    &nbsp;|&nbsp;
+    <a href="https://techliesandvideotape.com">VIDEO</a>
+  </p>
+</footer>
+
+<script>
+// Load latest episode for each show from episodes.json
+async function loadLatest(showFolder, titleEl, audioEl, containerEl) {
+  try {
+    const res = await fetch(`${showFolder}/episodes.json?t=${Date.now()}`);
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    const latest = data.episodes[0];
+    if (!latest) throw new Error();
+    document.getElementById(titleEl).textContent = `EP.${String(latest.number).padStart(3,'0')} — ${latest.title}`;
+    document.getElementById(audioEl).src = latest.audio;
+  } catch {
+    document.getElementById(containerEl).style.display = 'none';
+  }
+}
+
+loadLatest('tech-lies-audiotape', 'tla-latest-title',   'tla-latest-audio',   'tla-latest');
+loadLatest('the-forge',           'forge-latest-title', 'forge-latest-audio', 'forge-latest');
+</script>
+</body>
+</html>
