@@ -1,0 +1,31 @@
+{
+  "episodes": [
+    {
+      "title": "Banana Quest",
+      "slug": "banana-quest",
+      "desc": "In this Tech, Lies and Audiotape Podcast, we examine a scenario where Steve Jobs did not die in 2011 but in fact was cyrogenically frozen and placed in suspended animation with one thing still functioning: his brain.  Woken up 15 years later with time to contemplate the ultimate tech solution, Jobs has an answer for the AI resource bottleneck: human AI.\n\nOne problem: If you need to go grocery shopping, you can't.\n\nWhile parody, this faux narrative hypothesizes about what might really happen if a major tech company such as Apple made a move to make the human the AI.",
+      "audio": "https://archive.org/download/banana-quest-tech-lies-and-audiotape/BananaQuest_Tech_Lies_and_Audiotape.m4a",
+      "number": 1,
+      "season": 1,
+      "duration": "00:21:21",
+      "fileSize": 38800000,
+      "explicit": "no",
+      "tags": [
+        "Tech",
+        "AI",
+        "Apple",
+        "Steve Jobs",
+        "Banana Quest",
+        "MacOS",
+        "iOS",
+        "iPhone",
+        "iPad",
+        "MacIntosh",
+        "Apple Computer",
+        "Human Technology"
+      ],
+      "created": "2026-04-16T01:14:32.450Z",
+      "modified": "2026-04-16T01:14:32.450Z"
+    }
+  ]
+}
