@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title><![CDATA[Tech, Lies and Audiotape Episode 1 Banana Quest]]></title>
+    <description><![CDATA[In this Tech, Lies and Audiotape Podcast, we examine a scenario where Steve Jobs did not die in 2011 but in fact was cyrogenically frozen and placed in suspended animation with one thing still functioning: his brain.  Woken up 15 years later with time to contemplate the ultimate tech solution, Jobs has an answer for the AI resource bottleneck: human AI.
+
+One problem: If you need to go grocery shopping, you can't.
+
+While parody, this faux narrative hypothesizes about what might really happen if a major tech company such as Apple made a move to make the human the AI.]]></description>
+    <link>https://podcast.fluidfortune.com/tech-lies-audiotape</link>
+    <atom:link href="https://podcast.fluidfortune.com/tech-lies-audiotape/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Apr 2026 01:14:34 GMT</lastBuildDate>
+    <itunes:author>Fluid Fortune</itunes:author>
+    <itunes:owner>
+      <itunes:name>Fluid Fortune</itunes:name>
+    </itunes:owner>
+    <itunes:image href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_kAv6dkeyo8SGLY6qMo5nPOUqfX9MqX7ZBE8npIvQ1OZ4e-BoEfPPrKuKS2gvu46VruTx9HJDbz11v_qJZ-hg5MDycbhfZoplqhJb9eg&s=10"/>
+    <image><url>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_kAv6dkeyo8SGLY6qMo5nPOUqfX9MqX7ZBE8npIvQ1OZ4e-BoEfPPrKuKS2gvu46VruTx9HJDbz11v_qJZ-hg5MDycbhfZoplqhJb9eg&s=10</url><title>Tech, Lies and Audiotape Episode 1 Banana Quest</title><link>https://podcast.fluidfortune.com/tech-lies-audiotape</link></image>
+    <itunes:explicit>no</itunes:explicit>
+    
+    <item>
+      <title><![CDATA[Banana Quest]]></title>
+      <description><![CDATA[In this Tech, Lies and Audiotape Podcast, we examine a scenario where Steve Jobs did not die in 2011 but in fact was cyrogenically frozen and placed in suspended animation with one thing still functioning: his brain.  Woken up 15 years later with time to contemplate the ultimate tech solution, Jobs has an answer for the AI resource bottleneck: human AI.
+
+One problem: If you need to go grocery shopping, you can't.
+
+While parody, this faux narrative hypothesizes about what might really happen if a major tech company such as Apple made a move to make the human the AI.]]></description>
+      <link>https://podcast.fluidfortune.com/tech-lies-audiotape/episodes/banana-quest.html</link>
+      <guid isPermaLink="true">https://podcast.fluidfortune.com/tech-lies-audiotape/episodes/banana-quest.html</guid>
+      <pubDate>Thu, 16 Apr 2026 01:14:32 GMT</pubDate>
+      <enclosure url="https://archive.org/download/banana-quest-tech-lies-and-audiotape/BananaQuest_Tech_Lies_and_Audiotape.m4a" length="38800000" type="audio/mpeg"/>
+      <itunes:duration>00:21:21</itunes:duration>
+      <itunes:episode>1</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Tech</itunes:keywords><itunes:keywords>AI</itunes:keywords><itunes:keywords>Apple</itunes:keywords><itunes:keywords>Steve Jobs</itunes:keywords><itunes:keywords>Banana Quest</itunes:keywords><itunes:keywords>MacOS</itunes:keywords><itunes:keywords>iOS</itunes:keywords><itunes:keywords>iPhone</itunes:keywords><itunes:keywords>iPad</itunes:keywords><itunes:keywords>MacIntosh</itunes:keywords><itunes:keywords>Apple Computer</itunes:keywords><itunes:keywords>Human Technology</itunes:keywords>
+    </item>
+  </channel>
+</rss>
